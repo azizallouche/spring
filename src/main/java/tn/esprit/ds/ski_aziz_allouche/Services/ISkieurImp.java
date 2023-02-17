@@ -24,11 +24,15 @@ public class ISkieurImp implements ISkieurService{
 
     @Override
     public void removeSkieur(Long numSkieur) {
-
+        skieurRepository.deleteById(numSkieur);
     }
+    @Override
+    public Skieur updateSkieur(Skieur skieur){
 
+        return skieurRepository.save(skieur);
+    }
     @Override
     public Skieur retrieveSkieur(Long numSkieur) {
-        return skieurRepository.findById(numSkieur).get();
+        return skieurRepository.findById(numSkieur).orElse(null);
     }
 }
