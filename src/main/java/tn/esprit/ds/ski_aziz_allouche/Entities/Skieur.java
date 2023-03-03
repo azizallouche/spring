@@ -35,4 +35,7 @@ public class Skieur {
     @OneToOne(cascade = CascadeType.ALL)
     public Abonnement abonnement;
 
+
+
+
 }

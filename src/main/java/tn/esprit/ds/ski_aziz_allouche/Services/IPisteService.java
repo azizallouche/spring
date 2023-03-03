@@ -1,6 +1,6 @@
 package tn.esprit.ds.ski_aziz_allouche.Services;
 
-import tn.esprit.tic.skimelekboussif.entities.Piste;
+import tn.esprit.ds.ski_aziz_allouche.Entities.Piste;
 
 import java.util.List;
 import java.util.Optional;

@@ -12,4 +12,6 @@ public interface ISkieurService {
 
     void removeSkieur (Long numSkieur);
     Skieur retrieveSkieur (Long numSkieur);
+    Skieur assignSkierToPiste(Long numSkieur, Long numPiste);
+    Skieur AssignSkierToSubscription(long numSkieur, long numAbon);
 }

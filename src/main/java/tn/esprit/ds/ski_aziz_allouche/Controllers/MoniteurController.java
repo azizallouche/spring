@@ -2,8 +2,8 @@ package tn.esprit.ds.ski_aziz_allouche.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import tn.esprit.tic.skimelekboussif.entities.Moniteur;
-import tn.esprit.tic.skimelekboussif.services.IMoniteurService;
+import tn.esprit.ds.ski_aziz_allouche.Entities.Monitor;
+import tn.esprit.ds.ski_aziz_allouche.Services.IMoniteurService;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,20 +15,20 @@ public class MoniteurController {
     @Autowired
     IMoniteurService iMoniteurService;
     @GetMapping
-    public List<Moniteur> getAll(){
+    public List<Monitor> getAll(){
         return iMoniteurService.retrieveAllMoniteurs();
 
     }
     @GetMapping("{numMoniteur}")
 
-    public Optional<Moniteur> retrieveMoniteur(@PathVariable Long numMoniteur) {
+    public Optional<Monitor> retrieveMoniteur(@PathVariable Long numMoniteur) {
 
         return  iMoniteurService.retrieveMoniteur(numMoniteur);
 
     }
     @PostMapping
 
-    public Moniteur addMoniteur(@RequestBody Moniteur moniteur){
+    public Monitor addMoniteur(@RequestBody Monitor moniteur){
 
         return iMoniteurService.addMoniteur(moniteur);
     }
@@ -39,7 +39,7 @@ public class MoniteurController {
     }
 
     @PutMapping
-    public Moniteur updateMoniteur(@RequestBody Moniteur Moniteur) {
+    public Monitor updateMoniteur(@RequestBody Monitor Moniteur) {
 
         return  iMoniteurService.updateMoniteur(Moniteur);
 

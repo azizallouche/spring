@@ -2,8 +2,8 @@ package tn.esprit.ds.ski_aziz_allouche.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import tn.esprit.tic.skimelekboussif.entities.Inscription;
-import tn.esprit.tic.skimelekboussif.services.IInscriptionService;
+import tn.esprit.ds.ski_aziz_allouche.Entities.Inscription;
+import tn.esprit.ds.ski_aziz_allouche.Services.IInscriptionService;
 
 import java.util.List;
 import java.util.Optional;

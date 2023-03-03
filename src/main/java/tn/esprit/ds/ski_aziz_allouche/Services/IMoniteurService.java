@@ -1,6 +1,6 @@
 package tn.esprit.ds.ski_aziz_allouche.Services;
 
-import tn.esprit.tic.skimelekboussif.entities.Moniteur;
+import tn.esprit.ds.ski_aziz_allouche.Entities.Monitor;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,9 +8,9 @@ import java.util.Optional;
 public interface IMoniteurService {
 
 
-    List<Moniteur> retrieveAllMoniteurs();
-    Moniteur addMoniteur(Moniteur moniteur);
-    Moniteur updateMoniteur (Moniteur moniteur);
-    Optional<Moniteur> retrieveMoniteur (Long numMoniteur);
+    List<Monitor> retrieveAllMoniteurs();
+    Monitor addMoniteur(Monitor moniteur);
+    Monitor updateMoniteur (Monitor moniteur);
+    Optional<Monitor> retrieveMoniteur (Long numMoniteur);
     void removeMoniteur  (Long numMoniteur);
 }

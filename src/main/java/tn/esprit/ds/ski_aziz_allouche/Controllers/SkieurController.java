@@ -3,33 +3,43 @@ package tn.esprit.ds.ski_aziz_allouche.Controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.ds.ski_aziz_allouche.Entities.Skieur;
+import tn.esprit.ds.ski_aziz_allouche.Repositories.PisteRepository;
 import tn.esprit.ds.ski_aziz_allouche.Services.ISkieurService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/skieur")
 public class SkieurController {
     @Autowired
-    ISkieurService iSkieurService;
+    ISkieurService skieurService;
     @GetMapping
-    public List<Skieur> getall(){
-        return iSkieurService.retrieveAllSkieurs();
+    public List<Skieur> getAll(){
+        return skieurService.retrieveAllSkieurs();
+    }
+    @GetMapping("/{numSkieur}")
+    public Skieur retrieveSkieur (@PathVariable Long numSkieur){
+        return skieurService.retrieveSkieur(numSkieur);
     }
     @PostMapping
-    public Skieur addSkieur(@RequestBody Skieur skieur){
-        return iSkieurService.addSkieur(skieur);
-    }
-    @GetMapping(path = "{num}")
-    public Skieur getbyId(@PathVariable Long num){
-        return iSkieurService.retrieveSkieur(num);
+    public Skieur postSkieur(@RequestBody Skieur skieur){
+        return skieurService.addSkieur(skieur);
     }
     @PutMapping
     public Skieur updateSkieur(@RequestBody Skieur skieur){
-        return iSkieurService.updateSkieur(skieur);
+        return skieurService.updateSkieur(skieur);
     }
-    @DeleteMapping("{num}")
-    public void removeSkieur(@PathVariable Long num){
-        iSkieurService.removeSkieur(num);
+    @DeleteMapping("/{id}")
+    public void removeSkieur (@PathVariable(name = "id") Long numSkieur){
+        skieurService.removeSkieur(numSkieur);
+    }
+    @PutMapping("/{numSkieur}/{numPiste}")
+    public Skieur assignSkierToPiste(@PathVariable Long numSkieur,@PathVariable Long numPiste){
+        return skieurService.assignSkierToPiste(numSkieur,numPiste);
+    }
+
+    @PutMapping("skiAbon/{numSkieur}/{numAbon}")
+    public Skieur AssignSkierToSubscription(@PathVariable Long numSkieur,@PathVariable Long numAbon){
+        return skieurService.AssignSkierToSubscription(numSkieur,numAbon);
     }
 }
