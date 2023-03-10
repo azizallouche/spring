@@ -3,6 +3,7 @@ package tn.esprit.ds.ski_aziz_allouche.Controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.ds.ski_aziz_allouche.Entities.Abonnement;
+import tn.esprit.ds.ski_aziz_allouche.Entities.TypeAbonnement;
 import tn.esprit.ds.ski_aziz_allouche.Services.IAbonnementService;
 
 import java.util.List;
@@ -41,6 +42,13 @@ public class AbonnementController {
     public Abonnement updateAbonnement(@RequestBody Abonnement abonnement) {
 
         return  iAbonnementService.updateAbonnement(abonnement);
+
+    }
+    @GetMapping("type/{TypeAbon}")
+
+    public List<Abonnement> retrieveAbonnementByTypeAbon(@PathVariable TypeAbonnement TypeAbon) {
+
+        return  iAbonnementService.findByTypeAbonOrderByDateDebut(TypeAbon);
 
     }
 }

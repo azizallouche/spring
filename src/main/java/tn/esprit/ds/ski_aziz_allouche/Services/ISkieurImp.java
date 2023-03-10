@@ -11,6 +11,7 @@ import tn.esprit.ds.ski_aziz_allouche.Repositories.AbonnementRepository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class ISkieurImp implements ISkieurService{
@@ -54,9 +55,9 @@ public class ISkieurImp implements ISkieurService{
         if(skieur != null && piste != null){
             //Traitement
             piste.getSkieur().add(skieur);
-            /*List<Piste> pistes = skieur.getPistes();
+            List<Piste> pistes = skieur.getPiste();
             pistes.add(piste);
-            skieur.setPistes(pistes);*/
+            skieur.setPiste(pistes);
 
             //save
             pisteRepository.save(piste);

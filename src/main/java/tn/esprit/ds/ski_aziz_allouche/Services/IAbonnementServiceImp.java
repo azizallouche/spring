@@ -3,6 +3,8 @@ package tn.esprit.ds.ski_aziz_allouche.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.ds.ski_aziz_allouche.Entities.Abonnement;
+import tn.esprit.ds.ski_aziz_allouche.Entities.Skieur;
+import tn.esprit.ds.ski_aziz_allouche.Entities.TypeAbonnement;
 import tn.esprit.ds.ski_aziz_allouche.Repositories.AbonnementRepository;
 
 import java.util.List;
@@ -30,6 +32,11 @@ public class IAbonnementServiceImp implements IAbonnementService{
     @Override
     public Optional<Abonnement> retrieveAbonnement(Long numAbon) {
         return abonnementRepository.findById(numAbon);
+    }
+
+    @Override
+    public List<Abonnement> findByTypeAbonOrderByDateDebut(TypeAbonnement typeAbonnement) {
+       return abonnementRepository.findByTypeAbonOrderByDateDebut(typeAbonnement);
     }
 
     @Override
