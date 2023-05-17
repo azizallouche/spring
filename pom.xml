@@ -8,13 +8,13 @@
         <version>2.7.8</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>tn.esprit.ds</groupId>
-    <artifactId>SKI_Aziz_Allouche</artifactId>
+    <groupId>tn.esprit.tic</groupId>
+    <artifactId>Ski-AzizAllouche</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>SKI_Oussama_Jalleli</name>
-    <description>SKI_Oussama_Jalleli</description>
+    <name>Ski-Oussema-F</name>
+    <description>Ski-Oussema-F</description>
     <properties>
-        <java.version>17</java.version>
+        <java.version>1.8</java.version>
     </properties>
     <dependencies>
         <dependency>
